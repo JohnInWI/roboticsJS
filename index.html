@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<title>Robotics2021</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="0.setup.js">
+</script>
+<script src="communication.js">
+</script>
+<script src="2.taskFunctions.js">
+</script>
+<script src="2.tasksLayout.js">
+</script>
+<script src="1.sandboxLayout.js">
+</script>
+<script src="1.sandBoxFunctions.js">
+</script>
+<script src="3.joystickFunction.js">
+</script>
+<script src="script.js">
+</script>
+<script src="virtualjoystick.js">
+</script>
+<script src="qrcode.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+
+<body>
+	<p id="demo"></p>
+	<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+		<div class="w3-container w3-theme-d2">
+			<span onclick="closeSidebar()" class="w3-button w3-display-topright w3-medium">X</span>
+  <br>
+  
+</div>
+
+<a class="w3-bar-item w3-button" id="lay1">Home</a>
+<a class="w3-bar-item w3-button"  id="lay2">Tasks</a>
+<a class="w3-bar-item w3-button"  id="lay3">Sandbox</a>
+<a class="w3-bar-item w3-button"  id="lay4">Joystick</a>
+<a class="w3-bar-item w3-button"  id="lay5">QR code</a>
+</nav>
+
+<header class="w3-top w3-bar w3-theme"id="theHeader">
+  <button class="w3-bar-item w3-button w3-xlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+  <h1 class="w3-bar-item" id="myTitle">Robotics</h1>
+</header>
+
+
+
+<div class="w3-container" style="margin-top:90px" id="mainContainer">
+<hr>
+<div class="w3-cell-row" id="mainW3row">
+  <div class="w3-cell" id="layout1" style="width:100%">
+    <img  src="https://tyhzua.bn.files.1drv.com/y4m6JjBVdLTYGPF_RUXCWZXzGI43luHu3zllOQHMMUXQUmU9tSWSu5StTUVXA2iDhQfaillymb-4Wqu7YhN299jFc-BFP9XozwUHA44ebCAYMFgEKTPRfsAs_qkAPQ6rcZAoMxclgB3fv_ghvcpnc44atu_Pdi1wozCQIS51OWIq8VDlevrcBxfvOhTsVwQO7XoTAQMd0ZENHsZqDtUU9Dehw?width=75&height=45&cropmode=none" width="75" height="45"  />
+ <p> <font size="1">To check communication with your robot, push the button below. 
+You should see "Hello from your robot" if you have a connection.
+If there is no reponse from the robot, it is likely it is not 
+connected to wifi. Using a laptop or mobile device, check to see if a wireless access point is 
+available with the number of your robot. If so, connect to it and
+open WIFI manager by going to 192.168.4.1 in a web browser. Then choose 
+a wireless access point available that has internet access. Once
+connected, try the communication test again.</font>  </p>
+    
+  </div>
+
+  
+  <div class="w3-cell" id="Tasks" style="width:100%">
+      <!--<button class="btn">orange</button>-->
+      <!--<button class="btn">>orange</button>-->
+      <!--<button class="btn">>orange</button>-->
+      <!--<button class="btn">orange</button>-->
+  </div>
+  
+  <div class="w3-cell" id="testing" style="width:100%">
+    
+
+
+
+  </div>
+  
+  
+<div class="w3-cell" id="QRcode" style="width:100%">
+  <div id="qrcode"></div>
+<script type="text/javascript">
+var x = document.URL;
+new QRCode(document.getElementById("qrcode"), x);
+</script>  
+
+
+
+  </div>
+
+
+
+
+
+
+<div id="footer"><h4>Robot Messages</h4></div>
+
+</div>
+</div>
+
+
+ <div  id="joystick" style="width:100%">
+ 
+   <button class="joybtn" id="joybtn"  onClick="showHide(2)" >Back to Tasks</button>
+
+   <div  class="joyarea" id="joyarea" width="100%">
+  </div> 
+  
+   <div  class="coords" id="coords" >
+     
+  </div> 
+
+<!--<div id="footer"><h4>Robot Messages</h4></div>-->
+
+   
+<!-- <script>
+			
+	
+			var joystick	= new VirtualJoystick({
+				container	: document.getElementById('joyarea'),
+				mouseSupport	: true,
+				limitStickTravel  :true,
+        // useCssTransform :true,
+			
+			});
+			joystick.addEventListener('touchStart', function(){
+				console.log('down')
+			})
+			joystick.addEventListener('touchEnd', function(){
+				console.log('up')
+			})
+
+			setInterval(function(){
+        window.joyx=Math.round(joystick.deltaX()) ;  
+        window.joyy=Math.round(joystick.deltaY()) ;  
+				var outputEl	= document.getElementById('coords');
+				outputEl.innerHTML	= '<b>Joy:</b> '
+					+ ' X:'+joyx
+					+ ' Y:'+joyy
+          joystickCode();         
+					
+
+			}, 1/30 * 1000);
+			
+		</script> -->
+
+   
+  </div>
+        
+
+<script>
+closeSidebar();
+function openSidebar() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeSidebar() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
